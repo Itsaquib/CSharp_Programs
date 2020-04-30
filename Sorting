@@ -1,0 +1,70 @@
+using System;
+
+namespace hello
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          int i,j,temp;
+          
+          Console.WriteLine("Enter the size of the array ");
+          int size = Convert.ToInt32(Console.ReadLine());
+
+          int[] arr = new int[size];
+          Console.WriteLine("Enter the Numbers for sorting = ");
+          for(i=0;i<size;i++)
+          {
+            arr[i]=Convert.ToInt32(Console.ReadLine());
+          }
+          while(true)
+          {
+          Console.WriteLine(" 1. Accending 2. Decending 3.Exit");
+          int stc = Convert.ToInt32(Console.ReadLine());
+          switch(stc)
+          {
+          
+            case 1: for(i=0;i<size;i++)
+                    {
+                      for(j=i+1;j<size;j++)
+                      {
+                        if(arr[i]>arr[j])
+                        {
+                          temp = arr[i];
+                          arr[i]=arr[j];
+                          arr[j]= temp;
+                        }
+                      }
+                    }
+                    Console.WriteLine("After Sorting we get ");
+                    for(i=0;i<size;i++)
+                    {
+                      Console.WriteLine(arr[i]);
+                    }
+                    break;
+            case 2: for(i=0;i<size;i++)
+                    {
+                      for(j=i+1;j<size;j++)
+                      {
+                        if(arr[i]<arr[j])
+                        {
+                          temp = arr[i];
+                          arr[i]=arr[j];
+                          arr[j]= temp;
+                        }
+                      }
+                    }
+                    Console.WriteLine("After Sorting we get ");
+                    for(i=0;i<size;i++)
+                    {
+                      Console.WriteLine(arr[i]);
+                    }
+                    break;
+            case 3: return;
+            default: Console.WriteLine("Enter number is invalid "); break;
+          }
+          }
+
+        }
+    }
+}       
